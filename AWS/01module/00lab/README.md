@@ -106,7 +106,7 @@ SEIR_Foundations/
 | `Wakanda_EC2_Instance_ Deployment_05_2` | `i-0b9cde10e8e27893b` | Running | `t3.small` | 3/3 checks passed | `us-west-2a` |
 | `Wakanda_EC2_Instance_ Deployment_05_3` | `i-0b60714addc8bf12a` | Running | `t3.small` | 3/3 checks passed | `us-west-2a` |
 
-📸 **Screenshot `Deployment_Instances_GUI_05.png`:** the Instances list showing all three `Deployment_05` instances **Running** with **3/3 checks passed** in `us-west-2a`.
+📸 **Screenshot [`Deployment_Instances_GUI_05.png`](/AWS/01module/00lab/screenshots/Deployment_Instances_GUI_05.png) :** the Instances list showing all three `Deployment_05` instances **Running** with **3/3 checks passed** in `us-west-2a`.
 
 ---
 
@@ -148,11 +148,11 @@ Repeated the steps in **3.1** for `Wakanda_EC2_Instance_ Deployment_05_2`. The s
 
 ### Observations during connection
 
-| Observation                                                              |  What it means                                                   |
-|--------------------------------------------------------------------------|------------------------------------------------------------------|
+| Observation                                                              |  What it means                                                                                                                                                                      |
+|--------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `WARNING: connection is not using a post-quantum key exchange algorithm` | My newer OpenSSH client prefers post-quantum key exchange, and the server's defaults don't offer it yet. The session is still encrypted; this is a warning to track, not a failure. |
-| Dashboard appeared without typing anything                               | The `/etc/profile.d/` hook from User data worked on first login. |
-| `seir-dashboard` re-ran on demand                                        | The script is installed on the `PATH` at `/usr/local/bin`.       |
+| Dashboard appeared without typing anything                               | The `/etc/profile.d/` hook from User data worked on first login.                                                                                                                    |
+| `seir-dashboard` re-ran on demand                                        | The script is installed on the `PATH` at `/usr/local/bin`.                                                                                                                          |
 
 ---
 
