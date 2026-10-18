@@ -172,11 +172,11 @@ All three instances returned instance ID, type and AZ through IMDSv2, and every 
 
 ## Task 5 : Evidence Summary
 
-| Instance          | Instance ID           | Public IPv4    | Private IPv4  | Connection method                             | Screenshot                        | Instance Terminated |
-|-------------------|-----------------------|----------------|---------------|-----------------------------------------------|-----------------------------------|---------------------|
-| `Deployment_05_1` | `i-00a9c0c10a10ffaa0` | 44.255.198.159 | 172.31.34.166 | EC2 Instance Connect                          | `screenshots/Deployment_05_1.png` | Yes                 |
-| `Deployment_05_2` | `i-0b9cde10e8e27893b` | 35.166.152.17  | 172.31.42.93  | EC2 Instance Connect                          | `screenshots/Deployment_05_2.png` | Yes                 |
-| `Deployment_05_3` | `i-0b60714addc8bf12a` | 44.246.165.48  | 172.31.37.128 | SSH from Git Bash(`Wakanda_EC2_Instance.pem`) | `screenshots/Deployment_05_3.png` | Yes                 |
+| Instance                                                                 | Instance ID           | Public IPv4    | Private IPv4  | Connection method                             | Screenshot                        | Instance Terminated |
+|--------------------------------------------------------------------------|-----------------------|----------------|---------------|-----------------------------------------------|-----------------------------------|---------------------|
+| [`Deployment_05_1`](/AWS/01module/00lab/screenshots/Deployment_05_1.png) | `i-00a9c0c10a10ffaa0` | 44.255.198.159 | 172.31.34.166 | EC2 Instance Connect                          | `screenshots/Deployment_05_1.png` | Yes                 |
+| [`Deployment_05_2`](/AWS/01module/00lab/screenshots/Deployment_05_2.png) | `i-0b9cde10e8e27893b` | 35.166.152.17  | 172.31.42.93  | EC2 Instance Connect                          | `screenshots/Deployment_05_2.png` | Yes                 |
+| [`Deployment_05_3`](/AWS/01module/00lab/screenshots/Deployment_05_3.png) | `i-0b60714addc8bf12a` | 44.246.165.48  | 172.31.37.128 | SSH from Git Bash(`Wakanda_EC2_Instance.pem`) | `screenshots/Deployment_05_3.png` | Yes                 |
 
 ---
 
