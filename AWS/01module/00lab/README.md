@@ -28,13 +28,13 @@ This lab used the **AWS Management Console** to:
 
 ```text
 SEIR_Foundations/
-└── AWS/
-    └── Project/
-        └── 01module/
-            └── 00lab/
-                ├── screenshots
-                ├── script
-                └── README.md
+├── AWS/
+└── README.md
+    └── 01module/
+        └── 00lab/
+            ├── screenshots
+            ├── script
+            └── README.md
 ```
 
 ---
@@ -61,7 +61,7 @@ SEIR_Foundations/
 
 ---
 
-## Task 1 – Create the EC2 Launch Template
+## Task 1 : Create the EC2 Launch Template
 
 1. In **EC2 → Launch Templates**, created a new launch template.
 2. **AMI:** Quick Start → **Amazon Linux 2023 AMI**.
@@ -93,7 +93,7 @@ SEIR_Foundations/
 
 ---
 
-## Task 2 – Launch EC2 Instances from the Template
+## Task 2 : Launch EC2 Instances from the Template
 
 1. From **Launch Templates**, chose **Actions → Launch instance from template**.
 2. Launched three instances with the inherited template settings.
@@ -110,9 +110,9 @@ SEIR_Foundations/
 
 ---
 
-## Task 3 – Connect to the Instances
+## Task 3 : Connect to the Instances
 
-### 3.1 EC2 Instance Connect – `Deployment_05_1`
+### 3.1 EC2 Instance Connect - `Deployment_05_1`
 
 1. Selected `Wakanda_EC2_Instance_ Deployment_05_1` → **Connect** → **EC2 Instance Connect** tab.
 2. Username `ec2-user`, then **Connect**.
@@ -120,13 +120,13 @@ SEIR_Foundations/
 
 📸 **Screenshot `Deployment_05_1.png`:** EC2 Instance Connect session on `i-00a9c0c10a10ffaa0` (Public IP `44.255.198.159`, Private IP `172.31.34.166`) showing the SEIR Foundations dashboard at login and again after running `seir-dashboard`.
 
-### 3.2 EC2 Instance Connect – `Deployment_05_2`
+### 3.2 EC2 Instance Connect - `Deployment_05_2`
 
 Repeated the steps in **3.1** for `Wakanda_EC2_Instance_ Deployment_05_2`. The session opened on `ip-172-31-42-93`.
 
 📸 **Screenshot `Deployment_05_02.png`:** EC2 Instance Connect session on `i-0b9cde10e8e27893b` (Public IP `35.166.152.17`, Private IP `172.31.42.93`) showing two dashboard runs, with uptime advancing from 3 to 4 minutes.
 
-### 3.3 SSH – `Deployment_05_3`
+### 3.3 SSH - `Deployment_05_3`
 
 1. Copied the public DNS name from **Connect → SSH client**.
 2. Opened Git Bash in the folder holding the key:
@@ -156,7 +156,7 @@ Repeated the steps in **3.1** for `Wakanda_EC2_Instance_ Deployment_05_2`. The s
 
 ---
 
-## Task 4 – Show the SEIR Dashboard
+## Task 4 : Show the SEIR Dashboard
 
 The dashboard ran on all three instances. Readings captured:
 
@@ -170,7 +170,7 @@ All three instances returned instance ID, type and AZ through IMDSv2, and every 
 
 ---
 
-## Task 5 – Evidence Summary
+## Task 5 : Evidence Summary
 
 | Instance          | Instance ID           | Public IPv4    | Private IPv4  | Connection method                             | Screenshot                        | Instance Terminated |
 |-------------------|-----------------------|----------------|---------------|-----------------------------------------------|-----------------------------------|---------------------|
@@ -180,7 +180,7 @@ All three instances returned instance ID, type and AZ through IMDSv2, and every 
 
 ---
 
-## Task 6 – Terminate the Instances
+## Task 6 : Terminate the Instances
 
 1. Exit the sessions: close the Instance Connect tabs, type `exit` in the SSH session.
 2. **EC2 → Instances**, select all three `Deployment_05` instances.
