@@ -198,7 +198,6 @@ Changing the SSH IP Address traffic (`0.0.0.0/0`) → to a custom local IP addre
 ## Lab 0 Completion Checklist
 
 - [x] Launch template created with custom key pair `Wakanda_EC2_Instance` *(screenshot to add)*
-- [x] Security group has exactly two inbound rules (SSH 22, HTTP 80) and the default outbound rule *(screenshot to add)*
 - [x] 3 instances launched, all `t3.small`, Running, 3/3 checks passed
 - [x] `Deployment_05_1` and `Deployment_05_2` connected via EC2 Instance Connect
 - [x] `Deployment_05_3` connected via SSH with `Wakanda_EC2_Instance.pem`
