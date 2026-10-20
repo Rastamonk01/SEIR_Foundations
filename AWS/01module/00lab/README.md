@@ -10,7 +10,7 @@
 
 Systems Engineering and Infrastructure Integration
 
-Applied Cloud & Platform Engineering - Lab Results: EC2 Instances
+Applied Cloud & Platform Engineering - Lab Results: EC2 Instances & Dashboard
 
 ---
 This lab used the **AWS Management Console** to:
@@ -29,11 +29,10 @@ This lab used the **AWS Management Console** to:
 ```text
 SEIR_Foundations/
 ├── AWS/
-└── README.md
     └── 01module/
         └── 00lab/
             ├── screenshots
-            ├── script
+            ├── script     ← User Data startup script
             └── README.md
 ```
 
