@@ -11,12 +11,24 @@ Where I build and learn from mistakes, consult and learn from others, while enjo
 ```text
 SEIR_Foundations/
 ├── AWS/
-└── README.md
     └── 01module/
         └── 00lab/
             ├── screenshots
             ├── script
             └── README.md
+        └── week1_tasks
+            ├── screenshots
+            ├── script
+            └── README.md
+├──.gitignore
+└── README.md
 ```
+
+---
+
+## Goals
+
+- To reason from evidence, manage risk, communicate technical decisions clearly, and operate systems responsibly.
+- To understanding consequences, maintaining reliability, and protecting the systems that organizations depend on.
 
 ---
