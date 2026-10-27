@@ -56,7 +56,7 @@ SEIR_Foundations/
 - **AMI:** Amazon Linux 2023.
 - **Instance type:** `t3.small` (2 vCPU, 1.9 GiB memory).
 - **Root volume:** 8 GiB.
-- **Local SSH client:** Git Bash on Windows, run from `~/Documents/Wakanda EC2 Key pair` *(location you have saved the key pair file)*
+- **Local SSH client:** Git Bash on Windows, run from `~/.../Wakanda EC2 Key pair` *(location you have saved the key pair file)*
 
 ---
 
@@ -65,7 +65,7 @@ SEIR_Foundations/
 1. In **EC2 → Launch Templates**, created a new launch template.
 2. **AMI:** Quick Start → **Amazon Linux 2023 AMI**.
 3. **Instance type:** `t3.small`.
-4. **Key pair:** `Wakanda_EC2_Instance` (RSA, `.pem` format), stored locally in `~/Documents/Wakanda EC2 Key pair/`.
+4. **Key pair:** `Wakanda_EC2_Instance` (RSA, `.pem` format), stored locally in `~/.../Wakanda EC2 Key pair/`.
 5. **Network settings:** created a custom security group in the default VPC with exactly two inbound rules:
 
    | # | Type | Protocol | Port range | Source      |
