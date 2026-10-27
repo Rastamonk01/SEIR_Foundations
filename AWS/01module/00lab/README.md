@@ -56,7 +56,7 @@ SEIR_Foundations/
 - **AMI:** Amazon Linux 2023.
 - **Instance type:** `t3.small` (2 vCPU, 1.9 GiB memory).
 - **Root volume:** 8 GiB.
-- **Local SSH client:** Git Bash on Windows, run from `~/Documents/Wakanda EC2 Key pair` *(location you have seved the key pair file)*
+- **Local SSH client:** Git Bash on Windows, run from `~/Documents/Wakanda EC2 Key pair` *(location you have saved the key pair file)*
 
 ---
 
@@ -190,7 +190,7 @@ All three instances returned instance ID, type and AZ through IMDSv2, and every 
 
 ## Next Challenge
 
-Changing the SSH IP Address traffic (`0.0.0.0/0`) → to a custom local IP address (`My IP`) and excuting a custom script.
+Changing the SSH IP Address traffic (`0.0.0.0/0`) → to a custom local IP address (`My IP`) and executing a custom script.
 
 ---
 
