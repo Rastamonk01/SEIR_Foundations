@@ -1,0 +1,4 @@
+Group = Troll Ops 
+Spotter = Tim Wolliston
+Teammates = Siwel_Louis, Tim Wolliston, Carlos Eduardo, Koffi Aleki
+Days + Times when your team meets = Mon, Wed & Fri, 8:00 PM - 11:00pm EST
