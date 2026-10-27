@@ -65,8 +65,8 @@ SEIR_Foundations/
 | Field          | Detail                        |
 |----------------|-------------------------------|
 | Group          | Troll Ops                     |
-| Spotter        | Tim's Group                   |
-| Teammates      | Tim, Carlos, Emonie, Marvin   |
+| Spotter        | Tim                           |
+| Teammates      | Tim, Carlos, Siwel            |
 | Meeting times  | Mon, Wed & Fri, 8:00 PM EST   |
 
 ## Environment
