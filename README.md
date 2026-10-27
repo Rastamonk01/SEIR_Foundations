@@ -12,6 +12,12 @@ Where I build and learn from mistakes, consult and learn from others, while enjo
 SEIR_Foundations/
 ├── AWS/
     └── 01module/
+        ├── 00.5lab/
+            ├── screenshots
+            ├── scripts
+            ├── udemy
+            ├── group_TODS.txt
+            └── README.md
         ├── 00lab/
             ├── screenshots
             ├── script
