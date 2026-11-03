@@ -22,6 +22,15 @@ SEIR_Foundations/
             ├── screenshots
             ├── script
             └── README.md
+        └── lesson1_ec2/
+            ├── lab_runs/
+            ├── scripts/ 
+            ├── udemy/
+            ├── ai_enabled_study_lab1.0.txt 
+            ├── ai_review_transcript_Koffi.txt
+            ├── lab1_notes.md
+            ├── README.md
+            └── spotter_Koffi.txt
         └── week1_tasks
             ├── screenshots
             ├── script
