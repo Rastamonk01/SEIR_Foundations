@@ -1,0 +1,120 @@
+AI REVIEW TRANSCRIPT (SUMMARY) - Lesson 1 Runbook / Week 3
+=========================================================
+Person      : Koffi A
+AI used      : Claude (Anthropic), claude.ai
+Date         : Saturday 31 October 2026 (Australia/Adelaide, ACDT)
+Share link   : <paste the claude.ai share link for this chat here>
+Note         : This is a SUMMARY of the conversation, not a verbatim
+               transcript. The full conversation is at the share link.
+
+---------------------------------------------------------
+TURN 1 - 09:05 ACDT
+---------------------------------------------------------
+PERSON ASKED:
+Gave the AI the Balerica Legacy Bank runbook (runbook.md) and the
+Week 3 assignment, plus two screenshots from Lab Run 1 (browser
+tabs showing the bank home page, /docs Swagger console and the
+port-80 instance-details page; terminal showing COBOL commands,
+the ID line and uvicorn startup). Asked the AI, acting as an
+architect with 10 years' experience, to break down the COBOL core
+practice and the rest of the Week 3 objectives.
+
+AI ANSWERED (summary):
+1. Problem found in Run 1: the ID line used "uptime -p" (printed
+   "up 18 minutes") instead of the required "uptime -s" (prints
+   the boot timestamp). Because the README table needs a
+   "Boot time (UTC)" that exactly matches the screenshot, Run 1
+   probably will not count as submitted. Fix: if the instance is
+   still running, Ctrl+C uvicorn, run the corrected ID line,
+   restart uvicorn, retake the screenshot; otherwise redo Run 1.
+2. Launch template check: instance was launched from
+   "lesson1_ec2_template_01", which has User Data (port-80 page).
+   Fine only if the User Data does NOT clone the repo or run the
+   installer (that would be a "baked" template and not count).
+3. Public DNS for Run 1 read from the browser tab:
+   ec2-98-89-23-249.compute-1.amazonaws.com. Future runs: get it
+   with "ec2-metadata --public-hostname".
+4. Deadline: Tue Nov 3, 12:00 PM CST = Wed Nov 4, 4:30 AM ACDT.
+   Flagged that the assignment header says "Due MON 11/02" but the
+   deadline line says Tuesday Nov 3 - ask the instructor.
+5. Suggested schedule (max 3 lab-run screenshots per local day):
+   Sat Oct 31 runs 1-3, Sun Nov 1 runs 4-6, Mon Nov 2 run 7.
+6. COBOL practice commands for RC 0, 4, 8, 12 and the cut -c
+   ledger decode (see Turn 2). Explained Alice's balance:
+   000000500000 with PIC 9(10)V99 = 5000.00.
+7. Balance-change question: suggested comparing payments.dat,
+   account_lookup, accounts.dat and GET /transactions. Stated as a
+   HYPOTHESIS (not verified) that posting from the command line may
+   only write to payments.dat and not change the balance or SQLite.
+8. Breakdown of the other deliverables: lab runs + README table
+   template, lab1_notes.md structure, git clone screenshot (clone
+   only, no token - make the repo public if it is private),
+   ai_review file, spotter file, AI_enabled_study_lab1.0.txt
+   (5 topics, 3 sources each, every number needs source + year),
+   Maarek quiz screenshots (sections 21, 23, 25), and BAM extra
+   credit 2.1 / 2.2 / 2.3 (IAM role not access keys, AWS_REGION,
+   us. inference profile ID, User Data script, golden AMI cleanup).
+9. Stated that SWIFT MT/MX coexistence ended in November 2025 "as I
+   understand it" and told the student to confirm on the Swift
+   ISO 20022 FAQ.
+10. Tips: check Volumes and Elastic IPs after every termination;
+    the student's home IP appears in the uvicorn logs.
+
+---------------------------------------------------------
+TURN 2 - 09:17 ACDT
+---------------------------------------------------------
+PERSON ASKED:
+Shared a terminal screenshot showing "account_lookup 100001" then
+"echo $?" -> 0, plus the 999999 lookup (-> 4), a TXN0001 payment
+and the ID line. Asked whether it counts as cobol_rc0.jpg and how
+to produce return codes 4, 8 and 12.
+
+AI ANSWERED (summary):
+Does NOT count, because:
+  a) the ID line is not shown above the result (it appears after);
+  b) the ID line uses "uptime -p" instead of "uptime -s";
+  c) the posted TXN ID "TXN0001" has no initials (that was the
+     runbook example, fine for the lab run, not for practice).
+Fix: in Window 2, for each screenshot run "clear", then the ID
+line, then the command with "; echo $?" on the same line:
+
+  ID line:
+  whoami && TZ='Australia/Adelaide' date && ec2-metadata -i && uptime -s
+
+  RC 0  : ./cobol/bin/payment_post TXN-XX-0001 100001 10.00 USD HW-RC0; echo $?
+  RC 4  : ./cobol/bin/account_lookup 999999; echo $?
+  RC 8  : ./cobol/bin/payment_post TXN-XX-0002 100001 0.00 USD HW-RC8; echo $?
+          (fallback: 99999999.99 to trigger insufficient funds)
+  RC 12 : cd ~  then  /opt/balerica-bank/cobol/bin/account_lookup 100001; echo $?
+          (expected FILE-STATUS=35 then 12; then cd /opt/balerica-bank)
+  Ledger: cut -c1-6 / 7-36 / 37-44 / 45-56 / 57-59 data/accounts.dat
+  Notes : grep 'TXN-XX' data/payments.dat, re-run account_lookup 100001,
+          compare to 5000.00 and explain why.
+Rules: keep "; echo $?" on the same line (anything in between
+overwrites $?), and do the practice on an instance that will be in
+the README table.
+
+---------------------------------------------------------
+CLAIMS THE AI MARKED AS UNCERTAIN (to verify myself)
+---------------------------------------------------------
+- Exact return code payment_post gives for a non-existent account
+  (AI recommended account_lookup for RC 4 instead).
+- Whether a zero-amount payment returns exactly 8.
+- Whether Alice's balance changes after a command-line payment.
+- Exact date MT/MX coexistence ended (AI said November 2025).
+- Whether the installer needs "chown -R ec2-user" when run from
+  User Data as root (BAM 2.2).
+
+---------------------------------------------------------
+PERSON SECTION - fill in myself (graded most heavily)
+---------------------------------------------------------
+For each question (need at least 5):
+  Q:
+  AI's answer in my own words:
+  How I checked it:
+  Was the AI right / wrong / vague / out of date?
+
+Place the AI was wrong, vague, or out of date:
+  (write the result of testing one of the uncertain claims above)
+
+Reminder: no keys, passwords or tokens were pasted into this chat.

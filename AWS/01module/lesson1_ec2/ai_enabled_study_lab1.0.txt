@@ -1,0 +1,205 @@
+1) Databases:
+    Database types
+    Relational (SQL): tables and joins, for most business apps. PostgreSQL, MySQL, SQL Server
+    Document: flexible JSON. MongoDB, Firestore
+    Key-value: fast lookups and caching. Redis, DynamoDB
+    Wide-column: massive write volume. Cassandra, Bigtable
+    Graph: highly connected data. Neo4j
+    Search: full-text search. Elasticsearch
+    Analytical (OLAP): big aggregations. Snowflake, BigQuery
+    Vector: AI similarity search. pgvector, Pinecone
+
+    How to choose
+    Data shape: relationships and unpredictable queries point to SQL. Known-key access at huge scale points to NoSQL.
+    Consistency: money and inventory need ACID, which means SQL.
+    Realistic scale: one Postgres server handles more than most apps need.
+    Team skills: a familiar database often beats a theoretically better one.
+
+    The usual default is Postgres + Redis.
+
+    SQL vs NoSQL in the cloud
+    SQL (RDS, Aurora, Cloud SQL, Azure SQL): flexible queries, portable, mostly scales up.
+    NoSQL (DynamoDB, Cosmos DB, Firestore): scales out almost without limit, but you must design for your queries up front, and it’s proprietary (lock-in).
+    De facto standards
+
+    PostgreSQL (relational), SQLite (embedded), MongoDB (document), Redis (cache), Elasticsearch (search), DynamoDB (cloud NoSQL), Snowflake/BigQuery (warehouse).
+
+    PostgreSQL
+    Strengths: reliable ACID, rich SQL, JSONB, powerful extensions (PostGIS, pgvector), open source and available on every cloud.
+
+    Weaknesses:
+    Its process-per-connection model needs a pooler (PgBouncer).
+    VACUUM and bloat need tuning under heavy updates.
+    There’s no built-in horizontal write scaling.
+    Major version upgrades take planning.
+    It’s slower than columnar engines for analytics.
+
+2) COBOL
+    Who introduced it
+    COBOL came from a committee, not one person. It was designed in 1959 by CODASYL and partly based on FLOW-MATIC, a language designed by Grace Hopper, as part of a U.S. Department of Defense effort to create a portable language for data processing. The push started when programmer Mary Hawes, with Hopper’s full support, proposed in early 1959 a common business language that could run the same programs on different computers. Hopper is often called “the mother of COBOL,” but Jean Sammet, a lead designer, said Hopper was not its mother, creator or developer. The fairest summary is that Hopper was the major influence and a committee designed it. 
+    www.wikipedia.org 
+
+    How much is in use
+    Nobody knows exact numbers, and most figures are estimates that get recycled for years.
+
+    - Lines of code: A 2022 Micro Focus survey estimated 775–850 billion lines in daily use, a big jump from the often-quoted 220 billion. That older figure traces back to a 1997 Gartner study. The vendor behind the newer survey sells COBOL tools, so treat it with some caution. 
+    - Banking reach: A 2017 Reuters analysis found 43% of banking systems built on COBOL, 80% of in-person transactions using it, and 95% of ATM swipes relying on it. 
+    - Example scale: BNY Mellon reported in 2012 that it had 112,500 COBOL programs totalling 343 million lines in active use. 
+    
+    Value of those systems
+    The usual headline is that COBOL systems handle about $3 trillion in commerce every day, also from Reuters. This is the value of transactions flowing through the code, not what the code itself is worth. Beyond banking, COBOL runs core government systems such as social security, tax and defence payments, plus insurance and airlines. 
+
+    Average engineer age
+    Estimates vary a lot:
+
+    - Most industry experts interviewed for a Red Hat podcast put the average at 53. 
+    - One analysis uses an average age of 58 with a 10% annual retirement rate. 
+    - Another source says barely 10% of COBOL programmers are under 35, over 60% are 50 or older, and one study puts the average at 60. 
+
+    A reasonable range is mid-50s to around 60. The supply problem is real: COBOL is taught at only a handful of universities, and experts can cost 2–3x market rates. 
+
+    Effort to replace it
+    Very high, which is why most organisations haven’t done it.
+
+    - Success case (CBA, Australia): Commonwealth Bank replaced its core banking platform with Accenture and SAP; the job took five years and cost over A$1 billion. It worked because the bank migrated product by product rather than all at once. 
+    - Failure case (TSB, UK): In 2018 TSB tried a single big-bang migration of about 5.2 million customers, and roughly 1.9 million were locked out of their accounts. 
+    - Smaller systems: One UK guide puts a mid-sized COBOL migration at £200,000–£800,000 over 1–2 years, with full mainframe decommissioning running to millions over many years. 
+    - AI is changing the maths. In February 2026, Anthropic published research on using Claude Code to speed up COBOL modernization, arguing that understanding legacy code had cost more than rewriting it. But AI mainly speeds up analysis and translation; it doesn’t remove the harder work of data architecture redesign and the runtime guarantees a bank’s core must provide. 
+
+    Bottom line: COBOL is 65+ years old and still runs much of global finance and government. It persists because replacing it is slow, expensive and risky, not because nobody wants to.
+
+3) SWIFT
+    Who introduced it: SWIFT was founded in Brussels on 3 May 1973 as a bank-owned cooperative. It was initially supported by 239 banks in 15 countries, and the first message was sent in 1977. It is owned by its members and overseen by central banks including the National Bank of Belgium, the US Federal Reserve and the European Central Bank. 
+
+    How it’s used: Swift is a messaging network. It doesn’t hold or move money itself; banks use it to send each other payment instructions, then settle through correspondent accounts. According to Swift’s 2025 Annual Review, more than 11,500 member institutions sent an average of 59.8 million messages per day across over 200 countries and territories. The value passing over the network equals the world’s GDP roughly every three days. 
+
+    Competitors:
+
+    - CIPS (China) and SPFS (Russia): national alternatives, partly built to reduce exposure to sanctions.
+    - Ripple / blockchain and stablecoin rails: faster settlement, but much smaller volumes.
+    - Fintechs like Wise, which avoid Swift for many retail corridors by using local payment rails.
+    - Instant-payment links between national systems, such as Project Nexus.
+
+    None of these come close to Swift’s global reach.
+
+    Effort to replace it: Very high. Swift’s strength is network effects: 11,500+ institutions, shared standards, compliance tooling and decades of trust. Rivals tend to win individual corridors rather than replace the whole network.
+
+    ISO 20022: MT vs MX
+    Legacy MT | ISO 20022 (MX) |	Use
+    MT103	  |  pacs.008	   | Customer credit transfer (a person or company paying another)
+    MT202	  |  pacs.009	   | Bank-to-bank transfer (banks moving their own funds)
+    MT202 COV |	 pacs.009 COV  | Cover payment that funds an underlying customer payment
+
+    Why the change matters:
+
+    - Format: MT uses short, fixed text fields with tags like :59: and tight character limits. MX is XML with deep structure.
+    - Richer data: MX has dedicated fields for names, structured addresses, purpose codes, ultimate debtor/creditor and remittance details. This helps sanctions screening and automated reconciliation.
+    - Tracking: the UETR, a unique reference, travels with the payment end to end.
+    
+    End of coexistence
+    - Coexistence ran from March 2023 to 22 November 2025. Swift ran a three-year coexistence period, starting in March 2023, during which banks could send payment instructions in either format, and it closed on 22 November 2025. 
+    bankpulse
+    - After the cutover: FI-to-FI payment instruction messages are now only delivered in ISO 20022. Late adopters weren’t cut off completely: Swift began converting their MT instructions automatically through a contingency process, which has carried additional charges since the start of 2026. 
+    clearstream
+    optimus
+    - Not everything moved. Some reporting and exceptions messages have later dates. Corporates can still send MT101 initiation messages to banks, with no current deadline to move to ISO 20022. 
+    swift
+
+    Latest milestone: structured addresses (now deferred). The next step was to ban fully unstructured, free-text postal addresses from 14 November 2026. In July 2026, 58.3% of debtor addresses and 59.3% of creditor addresses on the Swift network were still unstructured free text, and on 27 August Swift deferred the deadline with no replacement date. Fedwire’s matching requirement has moved to around November 2027, pending confirmation. A revised Swift date is expected by December 2026. In practice, individual banks are setting their own rules in the meantime, so structuring addresses now is still the safe move. 
+
+4) APIs 
+    Who introduced it: No single inventor; APIs date back to the 1960s. Modern web APIs began in 2000, when Salesforce and eBay launched public APIs and Roy Fielding defined REST in his PhD dissertation.
+
+    How many systems use it: Nearly all modern software. APIs make up about 57% of the dynamic internet traffic Cloudflare handles.
+
+    How it’s used: Programs request data or actions from each other, such as payments, logins, maps, or microservices inside a company.
+
+    Competitors: REST (the default), GraphQL, gRPC, SOAP, and webhooks.
+
+    Importance to AI adoption: Critical. Companies access AI models through APIs, and AI agents take action by calling APIs. Anthropic’s MCP (2024) standardises how models connect to tools and APIs.
+
+    Difficulty securing it: High. In Akamai’s 2026 study, 87% of organisations had an API security incident in the past year, averaging over US$700K per incident. 42% linked incidents to AI-related APIs. The main causes are broken authorisation, forgotten APIs, and weak validation.
+
+    GET vs POST
+    - GET: reads data. Parameters go in the URL, it doesn’t change anything, and it’s safe to repeat and cacheable.
+    - POST: sends data to create or change something. Data goes in the body, and repeating it can create duplicates.
+    
+    JSON
+    JSON is the standard lightweight text format for API data:
+
+    json:
+    { "orderId": 1042, "items": [{ "sku": "TSHIRT-M", "qty": 2 }], "paid": true }
+    
+    Why validate incoming data
+    Never trust the client, because anyone can send any request straight to your API. Validation blocks:
+
+    - Injection attacks: input that gets executed as SQL or commands.
+    - Unauthorised access: for example, changing userId to read someone else’s data.
+    - Mass assignment: sneaking in fields like "isAdmin": true.
+    - Crashes and abuse: wrong types, huge payloads, request floods.
+
+    Rule: check the type, format, range and size of every input. Reject unknown fields, check permissions on every request, and always validate on the server.
+
+5) Intersection of COBOL, SWIFT, APIs & databases
+    How they fit together
+    These four technologies form layers of one stack, especially in banking:
+
+    - COBOL: the core business logic on mainframes. It calculates balances, interest, claims and benefits.
+    - Databases: the system of record. Older mainframe stores like DB2 and IMS sit next to COBOL, while modern Postgres, Oracle and cloud databases sit next to newer apps.
+    - APIs: the bridge. They wrap old COBOL and mainframe systems so mobile apps, fintechs and AI agents can use them without rewriting the core.
+    - Swift: the external messenger for money moving between institutions across borders.
+
+    Example: an international payment
+
+    1. You tap “send” in a banking app, which calls a REST API with JSON.
+    2. The API passes the request to a COBOL core program that checks your balance and debits it in a DB2 database.
+    3. The bank builds a Swift pacs.008 (ISO 20022) message and sends it to the receiving bank.
+    4. The receiving bank’s own core system (often also COBOL) credits the recipient, and an API pushes a notification to their phone.
+
+    The main friction points:
+
+    - Old and new data formats clash. COBOL uses fixed-width fields and packed decimals; APIs and ISO 20022 use JSON and XML with rich structure. Unstructured addresses are exactly why Swift’s structured-address deadline was deferred.
+    - Most “modernisation” really means wrapping, not replacing: putting APIs in front of COBOL and copying data out to modern databases.
+    - Every API placed in front of a legacy system opens a new attack surface into decades-old code.
+    
+    Importance by industry
+    1. Finance (most dependent on all four)
+
+    - COBOL runs core banking, cards and ATMs. Reuters estimated it supports about $3 trillion in daily commerce and 95% of ATM swipes.
+    - Swift is the backbone of cross-border payments.
+    - APIs power open banking, fintech partnerships and mobile apps.
+    - Databases must give exact, ACID-safe ledgers.
+    - Key risk: retiring COBOL experts and costly migrations, such as CBA’s A$1 billion+ core replacement.
+
+    2. Medical / healthcare
+
+    - COBOL still runs many insurance claims and billing systems.
+    - APIs are central to interoperability. The FHIR standard (JSON/REST) lets hospitals, apps and insurers share records.
+    - Databases hold electronic health records and must meet strict privacy rules such as HIPAA and Australia’s Privacy Act.
+    - Swift has a minor role, mostly international insurance and supplier payments.
+    - Key risk: API breaches exposing very sensitive patient data.
+
+    3. Academic
+
+    - The lightest legacy burden. Student systems and finance may still run on older ERP systems; some universities still have COBOL.
+    - Databases support research data, student records and library catalogues.
+    - APIs connect learning platforms (Canvas, Moodle), research tools and publishing data such as ORCID and Crossref.
+    - Swift is used for international tuition and research grant payments.
+    - Role in training: universities rarely teach COBOL anymore, which is a root cause of the skills gap.
+
+    4. Government
+
+    - The heaviest COBOL user after banks: tax, social security, pensions, unemployment and defence payroll. During COVID, many US state unemployment systems running COBOL buckled under demand.
+    - Databases hold citizen records, often in siloed legacy systems.
+    - APIs drive digital government, such as myGov/myGovID in Australia, open data portals, and tax software that integrates directly with the tax office.
+    - Central banks help oversee Swift, and Swift carries government payments and is the main tool for financial sanctions (for example, removing Russian banks in 2022).
+    - Key risk: fragile, underfunded legacy systems where failure directly hits citizens.
+    
+    Bottom line
+                     | COBOL	                  | Swift	                        | APIs	       | Databases
+    Finance	         |  Critical                  |	 Critical                       |  Critical	   |   Critical
+    Medical	         |  Moderate (billing/claims) |	 Low                            |  High (FHIR) |   Critical
+    Academic	     |  Low	                      |  Low                            |  High	       |   High
+    Government	     |  Critical	              |  Moderate (payments, sanctions) |  High	       |   Critical
+
+    The common pattern across all four industries is that old cores stay and new interfaces get added on top. APIs are the glue, databases are the memory, COBOL is the aging engine, and Swift is the international postal service for money. The big challenges are the same everywhere: retiring skills, data quality, and securing the growing number of APIs.
