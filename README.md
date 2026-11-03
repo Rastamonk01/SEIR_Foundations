@@ -22,7 +22,7 @@ SEIR_Foundations/
             ├── screenshots
             ├── script
             └── README.md
-        └── lesson1_ec2/
+        ├── lesson1_ec2/
             ├── lab_runs/
             ├── scripts/ 
             ├── udemy/
