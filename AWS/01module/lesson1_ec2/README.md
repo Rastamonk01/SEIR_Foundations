@@ -164,7 +164,7 @@ Details, IDs and full outputs are in the BAM section of [lab1_notes.md](lab1_not
 | `README.md`                   | this file                                                              |
 | `lab1_notes.md`               | per-run notes, COBOL practice, mistakes, commands I know by heart, BAM |
 | `screenshots/`                | all `.png` evidence linked above                                       |
-| `ai_review_KA.txt`            | AI review of the runbook (TODO: rename with full name)                 |
+| `ai_review_KA.txt`            | AI review of the runbook                                               |
 | `ai_review_transcript_KA.txt` | conversation summary + share link                                      |
 | `spotter_KA.txt`              | spotter cross-check                                                    |
 | `AI_enabled_study_lab1.0.txt` | research: databases, COBOL, SWIFT/ISO 20022, APIs, intersection        |

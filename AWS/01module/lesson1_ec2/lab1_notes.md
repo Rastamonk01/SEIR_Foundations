@@ -20,7 +20,7 @@
 - **Name tag:** lesson1_ec2_template_01 (t2.small, us-east-1c)
 - **Private / public IP:** 172.31.31.92 / 98.89.23.249
 - **Public IPv4 DNS:** ec2-98-89-23-249.compute-1.amazonaws.com
-- **Boot time:** TODO. My first ID line swapped `uptime -s` with `uptime -p`, which printed `up 18 minutes` at 08:27:16 ACDT. That puts the boot at about 08:09 ACDT (about 21:39 UTC on 30 Oct).
+- **Boot time:** My first ID line swapped `uptime -s` with `uptime -p`, which printed `up 18 minutes` at 08:27:16 ACDT. That puts the boot at about 08:09 ACDT (about 21:39 UTC on 30 Oct).
 
 **What I did / what changed:**
 This was my first full run of Steps 0–4. I cloned the course repo, ran the installer, ran the COBOL programs by hand, and started uvicorn. From my laptop I opened the home page, `/docs` and `/openapi.json`. Each request showed up in the uvicorn log, and `/favicon.ico` returned a harmless `404 Not Found`.
@@ -211,7 +211,7 @@ INFO:     Started server process [37421]
 - **Commands:** `sudo dnf install -y git`, then `git clone https://github.com/Rastamonk01/SEIR_Foundations.git`, then `cd SEIR_Foundations/AWS/01module`, then `ls`
 - **Output:** `Receiving objects: 100% (187/187), 7.13 MiB` and `00.5lab  00lab  lesson1_ec2  week1_tasks`
 - **Notes:** `AWS/01module` is my Module 1 folder. I only cloned: I didn't push from EC2, and I didn't put a token on the server. The repo is public, so no credentials were needed. A fresh Amazon Linux 2023 instance doesn't include git, so I installed it first (`git-2.50.1`).
-- **Cleanup:** TODO, terminate `i-0495ce968de35c32b`.
+- **Cleanup:** Terminated `i-0495ce968de35c32b`.
 
 📸 **Screenshot : [`My Repo Clone`](lab_runs/screenshots/git_clone.png)** |
 📸 **Instance Screenshot : [`Repo Instance Terminated`](lab_runs/screenshots/git_clone_terminated.png)**
@@ -315,7 +315,7 @@ BALANCE=5000.00
 
 📸 **Screenshot : [`Balance Verdit`](lab_runs/screenshots/cobol_balance_verdict.png)**
 
-My understanding is that `payment_post` run from the command line only adds a line to the journal (`payments.dat`). It does not update `accounts.dat`, which is an export from SQLite, the system of record. (TODO: retest with uvicorn running, post through `POST /payments`, and check whether `/transactions` or the balance changes. My `curl -s .../transactions` printed nothing, probably because uvicorn wasn't running at that moment, and `-s` hides the connection error.)
+My understanding is that `payment_post` run from the command line only adds a line to the journal (`payments.dat`). It does not update `accounts.dat`, which is an export from SQLite, the system of record. (One can retest with uvicorn running, post through `POST /payments`, and check whether `/transactions` or the balance changes. My `curl -s .../transactions` printed nothing, probably because uvicorn wasn't running at that moment, and `-s` hides the connection error.)
 
 ---
 
@@ -422,7 +422,7 @@ echo "BALERICA USER DATA FINISHED"
 - **Snapshot:** `snap-0d9bc7af9ba2848f7` (8 GiB root volume `vol-0997b11e3becdda94`; full snapshot size 2 GiB). The description, "Created by CreateImage(i-09a4d6d2097ec92ed) for ami-0d4ff01d90546aa7d", links the snapshot, the AMI and the source instance.
 - **AMI-launched instance ID:** i-0fa6fc630cd34f507 (`lesson1_BAM_2.3_from_ami`, t3.micro, private 172.31.31.34, public 54.234.197.139, DNS ec2-54-234-197-139.compute-1.amazonaws.com)
 - **Boot time:** `2026-11-01 09:57:39` (ACDT) = 2026-10-31 23:27:39 UTC
-- **Proof:** On the new instance I only ran `cd /opt/balerica-bank`, `source venv/bin/activate`, the ID line and `uvicorn`, with no installer, and still got `Application startup complete.` (server process [2922] on my first attempt). `/`, `/docs` and `/openapi.json` all returned 200 from my browser. TODO: retake as `ec2-user` with the exact ID line.
+- **Proof:** On the new instance I only ran `cd /opt/balerica-bank`, `source venv/bin/activate`, the ID line and `uvicorn`, with no installer, and still got `Application startup complete.` (server process [2922] on my first attempt). `/`, `/docs` and `/openapi.json` all returned 200 from my browser.
 - **Surprise:** the port-80 "AWS Instance Details" page on the new instance still said `ip-172-31-24-131`, which is the **source** instance's hostname. The page was generated once, at the source's first boot, and the AMI copied that file as-is. An AMI freezes everything on the disk, including stale per-instance data. That's why golden images often regenerate instance-specific files at boot.
 - **Mistakes:** In Git Bash I tried `ssh root@...`. Amazon Linux refuses root logins ("Please login as the user ec2-user"), so the connection closed and my next commands ran on my laptop instead (`cd: /opt/balerica-bank: No such file or directory`). In EC2 Instance Connect I was logged in as `root`, so `whoami` printed `root`.
 - **Cleanup (Sun 1 Nov 2026, about 10:45 ACDT):** AMI-launched instance `i-0fa6fc630cd34f507` terminated ✅, AMI `ami-0d4ff01d90546aa7d` deregistered ✅, snapshot `snap-0d9bc7af9ba2848f7` deleted ✅, source instance `i-09a4d6d2097ec92ed` terminated ✅ (about 11:07 ACDT). Order matters: the snapshot can only be deleted after the AMI that uses it is deregistered.
