@@ -127,7 +127,7 @@ Done on Run 1 (`i-04a3f004ec972e0d3`) in `/opt/balerica-bank`. My TXN IDs start 
 
 ## Git
 
-I cloned my HW repo onto an EC2 instance and listed its module1 folder. I only cloned: I didn't push from EC2, and no token was put on the server.
+I cloned my repo onto an EC2 instance and listed its module1 folder. I only cloned: I didn't push from EC2, and no token was put on the server.
 
 📸 **Screenshot [`git_clone.jpg`](lab_runs/screenshots/git_clone.png) :** the ID line for `i-0495ce968de35c32b` (boot `2026-11-03 08:49:14` ACDT), then `git clone https://github.com/Rastamonk01/SEIR_Foundations.git` into the home folder, and `ls` of `SEIR_Foundations/AWS/01module` showing `00.5lab  00lab  lesson1_ec2  week1_tasks`.
 
@@ -135,7 +135,7 @@ I cloned my HW repo onto an EC2 instance and listed its module1 folder. I only c
 
 ---
 
-## Udemy — Maarek
+## Udemy - Maarek
 
 📸 **Screenshot [`Maarek quiz section 21`](udemy/01_maarek_quiz_section_21.png) :** the completed Section 21 quiz result.
 
