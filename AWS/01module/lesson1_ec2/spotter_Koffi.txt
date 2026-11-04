@@ -8,8 +8,8 @@ Things I learned from research:
 5) If an AccessDenied message says “not authorized”, IAM refused; if it says “not available for this account”, the account lacks access to that model.
 
 Things that Tim learned from research:
-1)
-2)
-3)
-4)
-5)
+1) How to create my own script to run frequently used commands e.g. menu.sh & legacy_bank_app.sh.
+2) I also learned who to leverage ai to teach me thing I don't know or understand.
+3) I also learned how to ask ai to export conversation history as well as transcripts.
+4) I learned how to access AWS Bedrock anthropic models from a linux EC2 instance.
+5) I learned how to have ai review my github pushes ensuring I have a clean tree and no unnecessary branches exists.
