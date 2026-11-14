@@ -31,6 +31,12 @@ SEIR_Foundations/
             ├── lab1_notes.md
             ├── README.md
             └── spotter_Koffi.txt
+        └── lesson3_jira/
+            ├── screenshots/
+            │   └── BAM_5/     
+            ├── bam_dup.py
+            ├── lesson3_notes.md
+            └── README.md
         └── week1_tasks
             ├── screenshots
             ├── script
