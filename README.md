@@ -32,8 +32,7 @@ SEIR_Foundations/
             ├── README.md
             └── spotter_Koffi.txt
         └── lesson3_jira/
-            ├── screenshots/
-            │   └── BAM_5/     
+            ├── screenshots/ 
             ├── bam_dup.py
             ├── lesson3_notes.md
             └── README.md
