@@ -8,6 +8,7 @@
 
 ![Items](https://img.shields.io/badge/Work_Items-1_Epic_|_6_Stories_|_24_Tasks-yellow?style=for-the-badge)
 ![Points](https://img.shields.io/badge/Story_Points-69-blueviolet?style=for-the-badge)
+![BAM](https://img.shields.io/badge/BAM-5.1–5.6_done_|_5.7_pending-orange?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)
 
 Applied Cloud & Platform Engineering, Lesson 3: I broke one ordinary day into a Jira epic, stories and tasks, and estimated each one in story points.
@@ -24,11 +25,25 @@ SEIR_Foundations/
     └── 01module/
         └── lesson3_jira/
             ├── screenshots/
-            │   ├── jira_estimation_on.jpg
-            │   ├── jira_epic.jpg
-            │   ├── jira_story.jpg
-            │   ├── jira_task.jpg
-            │   └── jira_backlog.jpg
+            │   ├── jira_estimation_on.png
+            │   ├── jira_epic.png
+            │   ├── jira_story.png
+            │   ├── jira_task.png
+            │   ├── jira_backlog.png
+            │   └── BAM_5/                  ← extra credit evidence
+            │       ├── slack_test_id.png
+            │       ├── BAM_5.1.png
+            │       ├── BAM_5.2.png
+            │       ├── BAM_5.3.png
+            │       ├── BAM_5.4.png
+            │       ├── BAM_5.5.png
+            │       ├── BAM_5.5_troubleshooting.png
+            │       ├── BAM_5.6.png
+            │       ├── BAM_5.6_slack.png
+            │       ├── BAM_5.6_jira.png
+            │       └── BAM_5.7.png         ← after the one-day sprint
+            ├── bam_dup.py
+            ├── lesson3_notes.md
             └── README.md
 ```
 
@@ -127,6 +142,36 @@ These totals match the backlog view: the sprint header shows **26** points (stor
 📸 **Screenshot [`jira_task.jpg`](screenshots/jira_task.png):** task **SEIR-37 [Morning] Alarm & get up** opened, showing Parent **SEIR-31**, its description, and **Story point estimate 1**.
 
 📸 **Screenshot [`jira_backlog.jpg`](screenshots/jira_backlog.png):** backlog showing all 6 stories in **SEIR Sprint 1** (26 points) and all 24 tasks in the backlog (43 points), each with its points and epic.
+
+---
+
+## "Be A Man" extra credit
+
+Details, IDs, commands, outputs and written answers are in the BAM section of [lesson3_notes.md](lesson3_notes.md#bam-extra-credit).
+
+All terminal work was done on **`i-0f6250818d1a31d40`** (t2.small, us-east-1d, boot `2026-11-14 13:12:12` ACDT) in `/opt/balerica-bank`, with `jira.py` and `incident.py` copied next to `slack.py`. Every terminal screenshot starts with my ID line. Browser and Slack screenshots show the Windows clock with the date.
+
+📸 **Screenshot [`slack_testid`](screenshots/BAM_5/slack_test_id.png):** the ID line for `i-0f6250818d1a31d40` (13:18:25 ACDT), then `python3 slack.py --test` returning **SUCCESS: Chewbacca approves!**. Slack was working on its own before I added Jira.
+
+📸 **Screenshot [`BAM_5.1`](screenshots/BAM_5/BAM_5.1.png):** my private config note (email blurred) next to the manual test incident **SEIR-61 "TEST - EC2 application error"** opened in Jira.
+
+📸 **Screenshot [`BAM_5.2`](screenshots/BAM_5/BAM_5.2.png):** the ID line (13:44:18 ACDT), then `python3 jira.py --verify` returning **Connected to Jira project: SEIR (SEIR-Saga_KA)**.
+
+📸 **Screenshot [`BAM_5.3`](screenshots/BAM_5/BAM_5.3.png):** the ID line (13:46:06 ACDT), then `slack.py --test` → `jira.py --verify` → `incident.py --dry-run` → `incident.py --test`, which returned **`"jira_key": "SEIR-62"`**, **`"jira_created": true`** and **`"slack_status": "sent"`**.
+
+📸 **Screenshot [`BAM_5.4`](screenshots/BAM_5/BAM_5.4.png):** the Slack alert in **#balerica-alerts-01** for incident `SEIR-TEST-20261114T031607764025`, with the clickable link **`…/browse/SEIR-62`** (clock 1:56 PM, 14/11/2026).
+
+📸 **Screenshot [`BAM_5.5`](screenshots/BAM_5/BAM_5.5.png):** Jira issue **SEIR-62** opened, with the title **`[Balerica AI][ERROR] incident.py: SEIR Foundations integration test: simulated application failure`**, shown in the **SEIR-Saga_KA** space (clock 1:58 PM, 14/11/2026).
+
+📸 **Screenshot [`BAM_5.5_troubleshooting`](screenshots/BAM_5/BAM_5.5_troubleshooting.png):** `chmod 600 .env` then `grep -o '^[A-Z_]*=' .env`, listing all the `SLACK_` and `JIRA_` variable **names** without their values.
+
+📸 **Screenshot [`BAM_5.6`](screenshots/BAM_5/BAM_5.6.png):** the ID line (14:13:10 ACDT), then [`bam_dup.py`](bam_dup.py) run twice with incident ID **`BAM-DUP-KA-001`**. Both runs returned **SEIR-63**: the first with `jira_created: True` / `sent`, the second with `jira_created: False` / `already_sent`. The SQLite query shows the stored row `BAM-DUP-KA-001|SEIR-63|1`.
+
+📸 **Screenshot [`BAM_5.6_slack`](screenshots/BAM_5/BAM_5.6_slack.png):** the single Slack alert for `BAM-DUP-KA-001` linking to **SEIR-63**. The second run didn't send a second alert.
+
+📸 **Screenshot [`BAM_5.6_jira`](screenshots/BAM_5/BAM_5.6_jira.png):** the one Jira issue **SEIR-63** created for `BAM-DUP-KA-001`.
+
+📸 **Screenshot [`BAM_5.7`](screenshots/BAM_5/BAM_5.7.png):** *(pending)* burndown chart for my one-day sprint in `SEIR-Saga_KA`.
 
 ---
 
