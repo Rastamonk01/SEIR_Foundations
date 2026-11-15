@@ -5,11 +5,11 @@
 **Time zone:** Australia/Adelaide (ACDT, UTC+10:30)
 **Region:** us-east-1 (N. Virginia)
 
-The required homework (A Day in My Shoes) is documented in [README.md](README.md). This file only covers the extra credit.
+The required homework (A Day in My Shoes) is documented in [README.md](README.md). This file only covers the challenge.
 
 ---
 
-## BAM extra credit
+## BAM Challenge
 
 ### Instance
 
@@ -41,18 +41,18 @@ whoami && TZ='Your/Zone' date && ec2-metadata -i && uptime -s
 
 ### Evidence summary
 
-| BAM       | Where          | Instance ID           | Time (ACDT) | Result                                       | Screenshot                              |
-|-----------|----------------|-----------------------|-------------|----------------------------------------------|-----------------------------------------|
-| pre-check | Terminal       | `i-0f6250818d1a31d40` | 13:18:25    | `slack.py --test` → SUCCESS                  | `slack_testid.png`                      |
-| 5.1       | Notepad + Jira | n/a (browser)         | —           | Config note + test issue SEIR-61             | `BAM_5.1.png`                           |
-| 5.2       | Terminal       | `i-0f6250818d1a31d40` | 13:44:18    | `jira.py --verify` → Connected to SEIR       | `BAM_5.2.png`                           |
-| 5.3       | Terminal       | `i-0f6250818d1a31d40` | 13:46:06    | `incident.py --test` → SEIR-62, Slack `sent` | `BAM_5.3.png`                           |
-| 5.4       | Slack          | n/a (Slack)           | 1:56 PM     | Alert with clickable SEIR-62 link            | `BAM_5.4.png`                           |
-| 5.5       | Jira           | n/a (browser)         | 1:58 PM     | SEIR-62 key, title, project                  | `BAM_5.5.png`                           |
-| 5.5 check | Terminal       | `i-0f6250818d1a31d40` | —           | `.env` variable names present                | `BAM_5.5_troubleshooting.png`           |
-| 5.6       | Terminal       | `i-0f6250818d1a31d40` | 14:13:10    | Two runs, same key SEIR-63                   | `BAM_5.6.png`                           |
-| 5.6       | Slack / Jira   | n/a                   | 2:13 PM     | One alert, one issue (SEIR-63)               | `BAM_5.6_slack.png`, `BAM_5.6_jira.png` |
-| 5.7       | Jira           | n/a (Jira)            | —           | *pending: one-day sprint*                    | `BAM_5.7.png`                           |
+| BAM       | Where          | Instance ID           | Time (ACDT)    | Result                                                                 | Screenshot                              |
+|-----------|----------------|-----------------------|----------------|------------------------------------------------------------------------|-----------------------------------------|
+| pre-check | Terminal       | `i-0f6250818d1a31d40` | 13:18:25       | `slack.py --test` → SUCCESS                                            | `slack_testid.png`                      |
+| 5.1       | Notepad + Jira | n/a (browser)         | —              | Config note + test issue SEIR-61                                       | `BAM_5.1.png`                           |
+| 5.2       | Terminal       | `i-0f6250818d1a31d40` | 13:44:18       | `jira.py --verify` → Connected to SEIR                                 | `BAM_5.2.png`                           |
+| 5.3       | Terminal       | `i-0f6250818d1a31d40` | 13:46:06       | `incident.py --test` → SEIR-62, Slack `sent`                           | `BAM_5.3.png`                           |
+| 5.4       | Slack          | n/a (Slack)           | 1:56 PM        | Alert with clickable SEIR-62 link                                      | `BAM_5.4.png`                           |
+| 5.5       | Jira           | n/a (browser)         | 1:58 PM        | SEIR-62 key, title, project                                            | `BAM_5.5.png`                           |
+| 5.5 check | Terminal       | `i-0f6250818d1a31d40` | —              | `.env` variable names present                                          | `BAM_5.5_troubleshooting.png`           |
+| 5.6       | Terminal       | `i-0f6250818d1a31d40` | 14:13:10       | Two runs, same key SEIR-63                                             | `BAM_5.6.png`                           |
+| 5.6       | Slack / Jira   | n/a                   | 2:13 PM        | One alert, one issue (SEIR-63)                                         | `BAM_5.6_slack.png`, `BAM_5.6_jira.png` |
+| 5.7       | Jira           | n/a (Jira)            | 15 Nov, ~16:00 | Sprint complete: 69 committed, 46 burned live, 23 closed at completion | `BAM_5.7.png`                           |
 
 ---
 
@@ -226,25 +226,51 @@ The ID is stored on the EC2 instance in the SQLite database **`/opt/balerica-ban
 
 ### BAM_5.7: One-day sprint in SEIR-Saga_KA
 
-*(To be filled in after the sprint.)*
+I moved all the stories and tasks into **SEIR Sprint 1**, started it on the morning of 15 Nov 2026, moved items to **Done** on the board during the day, and then clicked **Complete sprint**. Evidence: Reports → Sprint burndown chart, with the estimation field set to **Story points** ([`BAM_5.7.png`](screenshots/BAM_5/BAM_5.7.png)).
 
-|                  | Value                     |
-|------------------|---------------------------|
-| Sprint           | SEIR Sprint 1             |
-| Date             | 2026-11-__                |
-| Points committed | 69 (6 stories + 24 tasks) |
-| Points completed | __                        |
-| Completion       | __%                       |
+|                               | Value                                                  |
+|-------------------------------|--------------------------------------------------------|
+| Sprint                        | SEIR Sprint 1                                          |
+| Date                          | 2026-11-15 (one day, about 08:00 to 16:00 ACDT)        |
+| Estimation field              | Story points                                           |
+| Points committed              | **69** (6 stories + 24 tasks)                          |
+| Points completed (Jira)       | **69**: all 30 day items are in *Completed work items* |
+| Burned while the day happened | **46**                                                 |
+| Closed at sprint completion   | **23**                                                 |
+| Incomplete items              | 3 (0 points): SEIR-61, SEIR-62, SEIR-63                |
+| Scope changes                 | None (*There have been no scope changes this sprint*)  |
 
-**What didn't get done:**
+#### How the burndown went
 
-- [item (points): reason]
+- **About 08:00:** the sprint started at 69 points.
+- **About 08:00 to 10:15:** small steps down as the morning routine and breakfast were finished.
+- **About 10:15:** the biggest single drop, down to 26 points, as a block of work items was moved to Done.
+- **About 10:15 to 13:05:** a flat line at about 26 points.
+- **About 13:05:** a small drop to **23** points.
+- **About 15:40:** I completed the sprint. The line stayed at 23 until then and only fell to 0 at completion.
 
-**Unplanned work added mid-sprint:**
+The remaining 23 points match exactly the items still ahead of me that afternoon:
 
-- [item (points): why it came up]
+| Items                                                                                 | Points     |
+|---------------------------------------------------------------------------------------|------------|
+| [Commute] Drive home (SEIR-47)                                                        | 3          |
+| Evening story (SEIR-5) + Groceries, Cook dinner, Eat dinner, Talk with family/friends | 5 + 9 = 14 |
+| Bedtime story (SEIR-6) + Prep clothes, Brush teeth, Scroll phone/read, Sleep          | 2 + 4 = 6  |
+| **Total**                                                                             | **23**     |
 
-**Reflection:** [1–2 sentences on what the burndown showed, e.g. a flat line during the deep work block, then a drop in the evening.]
+#### What didn't get done
+
+- **Drive home, Evening and Bedtime (23 points) weren't done as they happened.** I closed the sprint at about 4:00 PM, before those parts of my day had happened, so Jira marked them Done at completion rather than as I did them. Jira reports 69/69, but the honest real-time figure is **46/69 (67%)**. The cliff at the right of the chart shows this.
+- **SEIR-61, SEIR-62 and SEIR-63 (0 points).** These are the incident Bugs from BAM_5.1, 5.3 and 5.6. Because my `.env` used `JIRA_PROJECT_KEY=SEIR`, `jira.py` created them in this space, and they were swept into the sprint. They are test records, not day work, so they stay **To Do** and return to the backlog.
+
+#### Unplanned work
+
+- The scope changes log is empty, so no new work items were added after the sprint started.
+- The 3 incident Bugs above were the only items that weren't part of my day plan. They had no points, so they didn't change the burndown, but they cluttered the sprint. Next time `jira.py` should point at the separate BAI project.
+
+#### Reflection
+
+The burndown wasn't a smooth line. It fell in steps as each block of the day finished, then stayed flat while I was in the middle of a long block, which matches how real sprints look. The biggest lesson is that completing a sprint early forces everything to a status: anything not truly finished should be left **not done** and carried over, rather than closed. Otherwise the report overstates what was delivered.
 
 ---
 

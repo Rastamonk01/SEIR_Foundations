@@ -8,7 +8,7 @@
 
 ![Items](https://img.shields.io/badge/Work_Items-1_Epic_|_6_Stories_|_24_Tasks-yellow?style=for-the-badge)
 ![Points](https://img.shields.io/badge/Story_Points-69-blueviolet?style=for-the-badge)
-![BAM](https://img.shields.io/badge/BAM-5.1–5.6_done_|_5.7_pending-orange?style=for-the-badge)
+![BAM](https://img.shields.io/badge/BAM-5.1–5.7_done-orange?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)
 
 Applied Cloud & Platform Engineering, Lesson 3: I broke one ordinary day into a Jira epic, stories and tasks, and estimated each one in story points.
@@ -30,7 +30,7 @@ SEIR_Foundations/
             │   ├── jira_story.png
             │   ├── jira_task.png
             │   ├── jira_backlog.png
-            │   └── BAM_5/                  ← extra credit evidence
+            │   └── BAM_5/                 
             │       ├── slack_test_id.png
             │       ├── BAM_5.1.png
             │       ├── BAM_5.2.png
@@ -41,7 +41,7 @@ SEIR_Foundations/
             │       ├── BAM_5.6.png
             │       ├── BAM_5.6_slack.png
             │       ├── BAM_5.6_jira.png
-            │       └── BAM_5.7.png         ← after the one-day sprint
+            │       └── BAM_5.7.png         ← one-day sprint burndown
             ├── bam_dup.py
             ├── lesson3_notes.md
             └── README.md
@@ -145,9 +145,9 @@ These totals match the backlog view: the sprint header shows **26** points (stor
 
 ---
 
-## "Be A Man" extra credit
+## "Be A Man" Challenge
 
-Details, IDs, commands, outputs and written answers are in the BAM section of [lesson3_notes.md](lesson3_notes.md#bam-extra-credit).
+Details, IDs, commands, outputs and written answers are in the BAM section of [lesson3_notes.md](lesson3_notes.md#bam-challenge).
 
 All terminal work was done on **`i-0f6250818d1a31d40`** (t2.small, us-east-1d, boot `2026-11-14 13:12:12` ACDT) in `/opt/balerica-bank`, with `jira.py` and `incident.py` copied next to `slack.py`. Every terminal screenshot starts with my ID line. Browser and Slack screenshots show the Windows clock with the date.
 
@@ -171,7 +171,7 @@ All terminal work was done on **`i-0f6250818d1a31d40`** (t2.small, us-east-1d, b
 
 📸 **Screenshot [`BAM_5.6_jira`](screenshots/BAM_5/BAM_5.6_jira.png):** the one Jira issue **SEIR-63** created for `BAM-DUP-KA-001`.
 
-📸 **Screenshot [`BAM_5.7`](screenshots/BAM_5/BAM_5.7.png):** *(pending)* burndown chart for my one-day sprint in `SEIR-Saga_KA`.
+📸 **Screenshot [`BAM_5.7`](screenshots/BAM_5/BAM_5.7.png):** Sprint burndown chart and report for **SEIR Sprint 1** (15 Nov 2026, Story points). **69** points were committed and all 30 day items show as Done. **46** points burned down during the day, and the last **23** (drive home, evening, bedtime) were closed when I completed the sprint at about 4:00 PM. There were no scope changes. The three 0-point incident Bugs (SEIR-61/62/63) were left incomplete. Full breakdown in [lesson3_notes.md](lesson3_notes.md#bam_57-one-day-sprint-in-seir-saga_ka).
 
 ---
 
