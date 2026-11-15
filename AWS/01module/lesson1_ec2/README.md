@@ -145,9 +145,9 @@ I cloned my repo onto an EC2 instance and listed its module1 folder. I only clon
 
 ---
 
-## "Be A Man" extra credit
+## "Be A Man" Challenge
 
-Details, IDs and full outputs are in the BAM section of [lab1_notes.md](lab1_notes.md#bam-extra-credit).
+Details, IDs and full outputs are in the BAM section of [lab1_notes.md](lab1_notes.md#bam-challenge).
 
 📸 **Screenshot [`BAM_2.1 SSH`](lab_runs/BAM_2/BAM_2.1_5.png) :** the ID line for `i-09a4d6d2097ec92ed`, then `POST /ask` about my own `TXN-KA-0101` answered with **`"source": "amazon-bedrock"`**, using IAM role `BalericaLegacyBankEC2Role` and inference profile `us.anthropic.claude-haiku-4-5-20251001-v1:0`, with no access keys on the instance.
 

@@ -346,7 +346,7 @@ My understanding is that `payment_post` run from the command line only adds a li
 
 ---
 
-## BAM (extra credit)
+## BAM Challenge
 
 ### BAM_2.1 - `/ask` answers from Amazon Bedrock ✅
 
