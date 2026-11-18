@@ -35,7 +35,8 @@ SEIR_Foundations/
             ├── screenshots/ 
             ├── bam_dup.py
             ├── lesson3_notes.md
-            └── README.md
+            ├── README.md
+            └── runbook.md
         └── week1_tasks
             ├── screenshots
             ├── script
