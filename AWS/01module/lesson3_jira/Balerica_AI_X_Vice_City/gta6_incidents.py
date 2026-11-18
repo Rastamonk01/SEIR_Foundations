@@ -11,6 +11,9 @@ Wanted level -> severity:
     3 stars -> ERROR      (Jira + Slack)
     4-5     -> CRITICAL   (Jira + Slack)
 
+Settings: loaded from .env2 first (override with --env-file). Values in .env2
+win; anything .env2 leaves out falls back to .env.
+
 Usage (run from /opt/balerica-bank, venv active):
     python3 gta6_incidents.py --list
     python3 gta6_incidents.py --dry-run --scenario vice-bank-heist
@@ -21,8 +24,14 @@ Usage (run from /opt/balerica-bank, venv active):
 """
 import argparse
 import json
+import os
 import random
 import sys
+from pathlib import Path
+
+# Settings for this script live in .env2 (separate from the main .env).
+# Any variable missing from .env2 falls back to the value in .env.
+ENV_FILE = ".env2"
 
 # Each scenario has a STABLE incident ID (GTA6-<CODE>-<run_id>).
 # Re-running the same scenario + run-id reuses the same Jira ticket.
@@ -164,6 +173,8 @@ def main() -> int:
     p.add_argument("--run-id", default="001",
                    help="Suffix for incident IDs (default 001). Change it to open a NEW incident.")
     p.add_argument("--yes", action="store_true", help="Confirm --all (creates many Jira issues)")
+    p.add_argument("--env-file", default=ENV_FILE,
+                   help=f"Settings file to load first (default {ENV_FILE}); its values win over .env")
     args = p.parse_args()
 
     if args.list or not (args.scenario or args.random or args.all):
@@ -191,10 +202,23 @@ def main() -> int:
         for n, pl in zip(names, payloads):
             print(f"--- {n} ---")
             print(json.dumps(pl, indent=2, ensure_ascii=False))
-        print("No API calls made.")
+        print(f"No API calls made. A real run would load {args.env_file} first.")
         return 0
 
-    # Imported only for real runs, so --list and --dry-run work without .env.
+    # Load .env2 BEFORE importing incident/jira/slack: jira.py reads its settings
+    # at import time. override=True makes .env2 win over anything already set.
+    # incident.py then calls load_dotenv() for .env, which only fills in
+    # variables that .env2 did NOT define (python-dotenv never overrides by default).
+    env_path = Path(args.env_file)
+    if not env_path.is_file():
+        print(f"Settings file {env_path} not found. Create it (chmod 600) or pass --env-file.")
+        return 2
+    from dotenv import load_dotenv
+    load_dotenv(env_path, override=True)
+    print(f"Loaded {env_path} | Jira project: {os.getenv('JIRA_PROJECT_KEY', '?')} | "
+          f"state DB: {os.getenv('INCIDENT_STATE_DB', 'data/incident_state.db')}")
+
+    # Imported only for real runs, so --list and --dry-run work without any env file.
     from incident import report_incident
 
     failures = 0
