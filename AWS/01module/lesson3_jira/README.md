@@ -44,7 +44,8 @@ SEIR_Foundations/
             │       └── BAM_5.7.png         ← one-day sprint burndown
             ├── bam_dup.py
             ├── lesson3_notes.md
-            └── README.md
+            ├── README.md
+            └── runbook.md
 ```
 
 ---
