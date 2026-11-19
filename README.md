@@ -11,41 +11,41 @@ Where I build and learn from mistakes, consult and learn from others, while enjo
 ```text
 SEIR_Foundations/
 ├── AWS/
-    └── 01module/
-        ├── 00.5lab/
-            ├── screenshots
-            ├── scripts
-            ├── udemy
-            ├── group_TODS.txt
-            └── README.md
-        ├── 00lab/
-            ├── screenshots
-            ├── script
-            └── README.md
-        ├── lesson1_ec2/
-            ├── lab_runs/
-            ├── scripts/ 
-            ├── udemy/
-            ├── ai_enabled_study_lab1.0.txt 
-            ├── ai_review_transcript_Koffi.txt
-            ├── lab1_notes.md
-            ├── README.md
-            └── spotter_Koffi.txt
-        └── lesson3_jira/
-            ├── bai_x_vice_city/
-            │   ├── screenshots/
-            │   ├── gta6_incidents.py
-            │   ├── README.md
-            │   └── runbook.md
-            ├── screenshots/
-            ├── bam_dup.py
-            ├── lesson3_notes.md
-            ├── README.md
-            └── runbook.md
-        └── week1_tasks
-            ├── screenshots
-            ├── script
-            └── README.md
+│   └── 01module/
+│       ├── 00.5lab/
+│       │   ├── screenshots
+│       │   ├── scripts
+│       │   ├── udemy
+│       │   ├── group_TODS.txt
+│       │   └── README.md
+│       ├── 00lab/
+│       │   ├── screenshots
+│       │   ├── script
+│       │   └── README.md
+│       ├── lesson1_ec2/
+│       │   ├── lab_runs/
+│       │   ├── scripts/ 
+│       │   ├── udemy/
+│       │   ├── ai_enabled_study_lab1.0.txt 
+│       │   ├── ai_review_transcript_Koffi.txt
+│       │   ├── lab1_notes.md
+│       │   ├── README.md
+│       │   └── spotter_Koffi.txt
+│       ├── lesson3_jira/
+│       │   ├── bai_x_vice_city/
+│       │   │   ├── screenshots/
+│       │   │   ├── gta6_incidents.py
+│       │   │   ├── README.md
+│       │   │   └── runbook.md
+│       │   ├── screenshots/
+│       │   ├── bam_dup.py
+│       │   ├── lesson3_notes.md
+│       │   ├── README.md
+│       │   └── runbook.md
+│       └── week1_tasks
+│            ├── screenshots
+│            ├── script
+│            └── README.md
 ├──.gitignore
 └── README.md
 ```
