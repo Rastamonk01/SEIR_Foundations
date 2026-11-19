@@ -29,7 +29,7 @@ All scenarios are fictional test data. No real customer data is used. The GTA 6 
 
 ```text
 SEIR_Foundations/
-├── AWS/
+└── AWS/
     └── 01module/
         └── lesson3_jira/
             ├── bai_x_vice_city/
