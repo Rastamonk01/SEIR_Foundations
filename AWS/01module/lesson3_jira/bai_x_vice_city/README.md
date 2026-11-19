@@ -205,6 +205,6 @@ GTA6-DDOS-001|SEIR-77|1
 - **A separate state DB gives a separate dedup history.** `data/gta6_state.db` keeps the drill's incident IDs apart from `data/incident_state.db`. Querying the wrong file returns nothing.
 - **Severity filtering is a feature, not a failure.** WARNING and INFO incidents still get a Jira record, but they don't page anyone in Slack.
 - **Stable IDs make bulk runs safe.** `--all` reused the tickets for incidents that already existed instead of creating duplicates.
-- **Next improvement:** point `.env2` at the dedicated incident project (`BAI`), so drill tickets don't land in the SEIR-Saga sprint space.
+- **Next improvement:** point `.env2` at the dedicated incident project (`SEIR`), so drill tickets don't land in the SEIR-Saga sprint space.
 
 See [runbook.md](runbook.md) to redeploy it step by step.
