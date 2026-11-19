@@ -32,7 +32,12 @@ SEIR_Foundations/
             ├── README.md
             └── spotter_Koffi.txt
         └── lesson3_jira/
-            ├── screenshots/ 
+            ├── bai_x_vice_city/
+            │   ├── screenshots/
+            │   ├── gta6_incidents.py
+            │   ├── README.md
+            │   └── runbook.md
+            ├── screenshots/
             ├── bam_dup.py
             ├── lesson3_notes.md
             ├── README.md
