@@ -28,7 +28,7 @@ This lab used the **AWS Management Console** to:
 
 ```text
 SEIR_Foundations/
-├── AWS/
+└── AWS/
     └── 01module/
         └── 00lab/
             ├── screenshots
