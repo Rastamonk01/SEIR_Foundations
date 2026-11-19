@@ -24,6 +24,7 @@ SEIR_Foundations/
 ├── AWS/
     └── 01module/
         └── lesson3_jira/
+            ├── bai_x_vice_city/
             ├── screenshots/
             │   ├── jira_estimation_on.png
             │   ├── jira_epic.png
