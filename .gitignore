@@ -53,3 +53,14 @@ rpm_packages/
 *.zip
 
 venv/
+.env
+.env2
+.env*
+!.env.example
+*.db
+
+.env
+.env2
+.env*
+!.env.example
+*.db
