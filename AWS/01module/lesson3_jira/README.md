@@ -21,7 +21,7 @@ Applied Cloud & Platform Engineering, Lesson 3: I broke one ordinary day into a 
 
 ```text
 SEIR_Foundations/
-├── AWS/
+└── AWS/
     └── 01module/
         └── lesson3_jira/
             ├── bai_x_vice_city/
