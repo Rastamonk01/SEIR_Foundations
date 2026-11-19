@@ -31,7 +31,7 @@ The lab is split into two tasks, both run against the same EC2 instance launched
 
 ```text
 SEIR_Foundations/
-├── AWS/
+└── AWS/
     └── 01module/
         └── week1_tasks
             ├── screenshots
