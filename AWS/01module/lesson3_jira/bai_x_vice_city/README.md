@@ -44,13 +44,13 @@ SEIR_Foundations/
             │   │   ├── gta6_instance_incident_no_duplicates_02.png
             │   │   ├── gta6_instance_incident_severity_filter.png
             │   │   ├── gta6_instance_incident_severity_filter_jira.png
-            │   │   ├── gta6_instance_incident_severity_filter_slack_01.png
-            │   │   ├── gta6_instance_incident_severity_filter_slack_02.png
             │   │   ├── gta6_troubleshoot.png
             │   │   ├── gta6_instance_incident_other_runs_01.png
             │   │   ├── gta6_instance_incident_other_runs_02.png
             │   │   ├── gta6_instance_incident_other_runs_03.png
-            │   │   └── gta6_instance_incident_other_runs_jira.png
+            │   │   ├── gta6_instance_incident_other_runs_jira.png
+            │   │   ├── gta6_instance_incident_other_runs_slack_01.png
+            │   │   └── gta6_instance_incident_other_runs_slack_02.png
             │   ├── gta6_incidents.py
             │   ├── README.md
             │   └── runbook.md
@@ -189,7 +189,7 @@ GTA6-DDOS-001|SEIR-77|1
 
 📸 **Screenshot [`gta6_instance_incident_severity_filter_jira`](screenshots/gta6_instance_incident_severity_filter_jira.png):** the WARNING ticket **SEIR-66** in Jira. The incident is still recorded even though no alert was sent.
 
-📸 **Screenshots [`…_slack_01`](screenshots/gta6_instance_incident_severity_filter_slack_01.png) and [`…_slack_02`](screenshots/gta6_instance_incident_severity_filter_slack_02.png):** the Slack channel after the batch runs, showing only ERROR and CRITICAL alerts (SEIR-67 to 77). There are **no alerts for SEIR-66 (WARNING) or SEIR-75 (INFO)**.
+📸 **Screenshots [`…_slack_01`](screenshots/gta6_instance_incident_other_runs_slack_01.png) and [`…_slack_02`](screenshots/gta6_instance_incident_other_runs_slack_02.png):** the Slack channel after the batch runs, showing only ERROR and CRITICAL alerts (SEIR-67 to 77). There are **no alerts for SEIR-66 (WARNING) or SEIR-75 (INFO)**.
 
 📸 **Screenshot [`gta6_troubleshoot`](screenshots/gta6_troubleshoot.png):** `grep -o '^[A-Z_]*=' .env2`, listing the three variable **names** in `.env2` (`JIRA_PROJECT_KEY`, `JIRA_ISSUE_TYPE`, `INCIDENT_STATE_DB`) without their values.
 
