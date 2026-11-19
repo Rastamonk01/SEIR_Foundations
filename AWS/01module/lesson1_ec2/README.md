@@ -24,7 +24,7 @@ Applied Cloud & Platform Engineering. Lab results: seven hand-built EC2 instance
 
 ```text
 SEIR_Foundations/
-├── AWS/
+└── AWS/
     └── 01module/
         └── lesson1_ec2/
             ├── lab_runs/
