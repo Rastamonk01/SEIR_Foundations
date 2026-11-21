@@ -31,6 +31,11 @@ SEIR_Foundations/
 │       │   ├── lab1_notes.md
 │       │   ├── README.md
 │       │   └── spotter_Koffi.txt
+│       ├── lesson2_slack/
+│       │   ├── screenshots/
+│       │   ├── lesson2_notes.md
+│       │   ├── README.md
+│       │   └── runbook.md
 │       ├── lesson3_jira/
 │       │   ├── bai_x_vice_city/
 │       │   │   ├── screenshots/
